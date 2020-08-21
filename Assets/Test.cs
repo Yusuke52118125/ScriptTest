@@ -24,8 +24,6 @@ public class Boss
     }
     public void Magic(int magic)
     {
-        for( int i = 100 ;0 <= i ; i--)
-        {
             if(5 <= mp)
             {
                 mp -= magic;
@@ -33,11 +31,8 @@ public class Boss
             }
             else
             {
-                Debug.Log("mpが足りないための方が使えない");
-                break;
-
+            Debug.Log("mpが足りないための方が使えない");
             }
-        }
     }
 
 }
@@ -54,7 +49,6 @@ public class Test : MonoBehaviour
         lastboss.Attack();
         // 防御用の関数を呼び出す
         lastboss.Defence(3);
-        lastboss.Magic(5);
 
         int[] array = { 10, 20, 30, 40, 50 };
         for (int i = 0; i < array.Length; i++)
@@ -65,11 +59,18 @@ public class Test : MonoBehaviour
         {
             Debug.Log(array[j]);
         }
+        for(int i = 10; 0 <= i; i--)
+        {
+            //マジック用の関数をよびだす
+            lastboss.Magic(5);
+        }
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
